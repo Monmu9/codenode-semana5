@@ -1,0 +1,9 @@
+---
+const { titulo, descripcion, tecnologias } = Astro.props;
+---
+
+<div>
+  <h2>{titulo}</h2>
+  <p>{descripcion}</p>
+  <p><strong>Tecnologías:</strong> {tecnologias.join(", ")}</p>
+</div>

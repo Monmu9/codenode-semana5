@@ -1,0 +1,44 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { slug: "gastroreservas" } },
+    { params: { slug: "monbank" } },
+    { params: { slug: "codigo-de-vida" } },
+  ];
+}
+
+const { slug } = Astro.params;
+
+const proyectos = {
+  "gastroreservas": {
+    titulo: "GastroReservas",
+    descripcion: "Sistema de reservas para restaurantes con PHP, MySQL y REST API.",
+    tecnologias: ["PHP", "MySQL", "REST API"]
+  },
+  "monbank": {
+    titulo: "MONBANK",
+    descripcion: "App bancaria simulada con Chart.js y datos en JSON.",
+    tecnologias: ["JavaScript", "Chart.js", "JSON"]
+  },
+  "codigo-de-vida": {
+    titulo: "Código de Vida",
+    descripcion: "App web de emergencias con acceso a perfiles médicos por QR y NFC.",
+    tecnologias: ["Astro", "QR", "NFC"]
+  }
+};
+
+const proyecto = proyectos[slug];
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>{proyecto.titulo}</title>
+  </head>
+  <body>
+    <h1>{proyecto.titulo}</h1>
+    <p>{proyecto.descripcion}</p>
+    <p><strong>Tecnologías:</strong> {proyecto.tecnologias.join(", ")}</p>
+    <a href="/proyectos">← Volver a proyectos</a>
+  </body>
+</html>

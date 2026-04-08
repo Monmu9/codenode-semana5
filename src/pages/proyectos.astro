@@ -1,0 +1,40 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+
+const proyectos = [
+  {
+    titulo: "GastroReservas",
+    descripcion: "Sistema de reservas para restaurantes con PHP, MySQL y REST API.",
+    tecnologias: ["PHP", "MySQL", "REST API"]
+  },
+  {
+    titulo: "MONBANK",
+    descripcion: "App bancaria simulada con Chart.js y datos en JSON.",
+    tecnologias: ["JavaScript", "Chart.js", "JSON"]
+  },
+  {
+    titulo: "Código de Vida",
+    descripcion: "App web de emergencias con acceso a perfiles médicos por QR y NFC.",
+    tecnologias: ["Astro", "QR", "NFC"]
+  }
+];
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Proyectos</title>
+  </head>
+  <body>
+    <h1>Mis Proyectos</h1>
+
+    {proyectos.map((proyecto) => (
+      <ProjectCard
+        titulo={proyecto.titulo}
+        descripcion={proyecto.descripcion}
+        tecnologias={proyecto.tecnologias}
+      />
+    ))}
+
+  </body>
+</html>
