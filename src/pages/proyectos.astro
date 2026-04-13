@@ -1,4 +1,6 @@
+
 ---
+import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 
 const proyectos = [
@@ -20,21 +22,14 @@ const proyectos = [
 ];
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Proyectos</title>
-  </head>
-  <body>
-    <h1>Mis Proyectos</h1>
+<Layout title="Proyectos">
+  <h1>Mis Proyectos</h1>
 
-    {proyectos.map((proyecto) => (
-      <ProjectCard
-        titulo={proyecto.titulo}
-        descripcion={proyecto.descripcion}
-        tecnologias={proyecto.tecnologias}
-      />
-    ))}
-
-  </body>
-</html>
+  {proyectos.map((proyecto) => (
+    <ProjectCard
+      titulo={proyecto.titulo}
+      descripcion={proyecto.descripcion}
+      tecnologias={proyecto.tecnologias}
+    />
+  ))}
+</Layout>

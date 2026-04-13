@@ -1,4 +1,5 @@
 ---
+layout: ../layouts/Layout.astro
 title: Sobre mí
 ---
 
@@ -15,4 +16,5 @@ title: Sobre mí
 
 Soy de Alcázar de San Juan y estudio DAW en Jobie FP.
 Me gusta entender el código antes de escribirlo, no copiar y pegar sin más.
-Fuera del ordenador, elijo la música, el gimnasio y el pádel.
+Fuera del ordenador, elijo la música (toco el trombón), el gimnasio y el pádel.
+
