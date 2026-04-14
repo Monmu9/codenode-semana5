@@ -1,9 +1,14 @@
 ---
-const { titulo, descripcion, tecnologias } = Astro.props;
+const { titulo, descripcion, tecnologias, enlace } = Astro.props;
 ---
 
-<div>
-  <h2>{titulo}</h2>
-  <p>{descripcion}</p>
-  <p><strong>Tecnologías:</strong> {tecnologias.join(", ")}</p>
+<div class="bg-gray-900 rounded-xl p-6 mb-4 border border-gray-800 hover:border-teal-400 transition">
+  <h2 class="text-xl font-bold text-white mb-2">{titulo}</h2>
+  <p class="text-gray-400 mb-4">{descripcion}</p>
+  <div class="flex gap-2 flex-wrap mb-4">
+    {tecnologias.map((tec) => (
+      <span class="bg-teal-900 text-teal-300 text-xs px-3 py-1 rounded-full">{tec}</span>
+    ))}
+  </div>
+  <a href={`/codenode-semana5/proyectos/${enlace}`} class="text-teal-400 text-sm hover:underline">Ver proyecto →</a>
 </div>

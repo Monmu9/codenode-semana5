@@ -1,4 +1,3 @@
-
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
@@ -7,29 +6,33 @@ const proyectos = [
   {
     titulo: "GastroReservas",
     descripcion: "Sistema de reservas para restaurantes con PHP, MySQL y REST API.",
-    tecnologias: ["PHP", "MySQL", "REST API"]
+    tecnologias: ["PHP", "MySQL", "REST API"],
+    slug: "gastroreservas"
   },
   {
     titulo: "MONBANK",
     descripcion: "App bancaria simulada con Chart.js y datos en JSON.",
-    tecnologias: ["JavaScript", "Chart.js", "JSON"]
+    tecnologias: ["JavaScript", "Chart.js", "JSON"],
+    slug: "monbank"
   },
   {
     titulo: "Código de Vida",
     descripcion: "App web de emergencias con acceso a perfiles médicos por QR y NFC.",
-    tecnologias: ["Astro", "QR", "NFC"]
+    tecnologias: ["Astro", "QR", "NFC"],
+    slug: "codigo-de-vida"
   }
 ];
 ---
 
 <Layout title="Proyectos">
-  <h1>Mis Proyectos</h1>
+  <h1 class="text-4xl font-bold text-teal-400 mb-8">Mis Proyectos</h1>
 
   {proyectos.map((proyecto) => (
     <ProjectCard
       titulo={proyecto.titulo}
       descripcion={proyecto.descripcion}
       tecnologias={proyecto.tecnologias}
+      enlace={proyecto.slug}
     />
   ))}
 </Layout>
